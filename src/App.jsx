@@ -1,6 +1,8 @@
 import profile from "./assets/logo.gif";
 import { useState } from 'react';
 import './App.css';
+import NestedThemes from "./components/NestedThemes";
+
 import {
   Card,
   CardHeader,
@@ -41,6 +43,7 @@ function App() {
 
   return (
     <div className="App">
+      <NestedThemes></NestedThemes>
       <ThemeProvider theme={isDarkTheme ? createTheme(dark): createTheme(light)}>
         <CssBaseline/>
         <Container>
