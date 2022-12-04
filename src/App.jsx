@@ -1,10 +1,10 @@
+import profile from "./assets/logo.gif";
 import { useState } from 'react';
 import './App.css';
 import {
   Card,
   CardHeader,
   Switch,
-  CardContent,
   Box,
   Container,
   Typography,
@@ -49,10 +49,22 @@ function App() {
             <Card>
               <CardHeader action={<FormGroup>
                 <FormControlLabel control={
-                  <Switch checked={isDarkTheme} onChange={changeTheme}></Switch>
-                }></FormControlLabel>
-              </FormGroup>}>
-              </CardHeader>
+                  <Switch checked={isDarkTheme} onChange={changeTheme}/>
+                } label = "Dark Theme"/>
+              </FormGroup>}/>
+              <Typography variant = "h3" component = "h3" >
+                <div className="container">
+                  <div className="hPage">
+                    Home Page
+                  </div>
+                  Hello World!
+                  <br />
+                </div>
+              </Typography>
+              <img src={profile} alt="profile" className="App-logo" />
+                <Typography className="body1" variant="body1">
+                  Dark mode is {isDarkTheme ? "On" : "Off"}
+                </Typography>
             </Card>
           </div>
         </Container>
