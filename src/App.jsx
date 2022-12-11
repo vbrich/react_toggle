@@ -5,6 +5,10 @@ import {Card,CardHeader,Switch,Box,Container,Typography,FormGroup,FormControlLab
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 import { styled } from '@mui/material/styles';
 
+import IconButton from '@mui/material/IconButton';
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
+import NightlightOutlinedIcon from '@mui/icons-material/NightlightOutlined';
+
 // MUI Switch
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -57,13 +61,73 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 const light = {
   palette: {
-    mode: "light"
+    mode: "light",
+    primary: {
+      main: '#61dafb',
+      light: '#61dafb',
+      dark: '#21a1c4',
+    },
+    secondary: {
+      main: '#b5ecfb',
+      light: '#61dafb',
+      dark: '#21a1c4',
+    },
+    error: {
+      main: '#444444',
+    },
+    background: {
+      default: '#1E1E1E',
+    },
+  },
+  overrides: {
+    MuiPaper: {
+      root: {
+        padding: '20px 10px',
+        margin: '10px',
+        backgroundColor: '#fff', // 5d737e
+      },
+    },
+    MuiButton: {
+      root: {
+        margin: '5px',
+      },
+    },
   }
 };
 
 const dark = {
   palette: {
-    mode: "dark"
+    mode: "dark",
+    primary: {
+      main: '#61dafb',
+      light: '#61dafb',
+      dark: '#21a1c4',
+    },
+    secondary: {
+      main: '#b5ecfb',
+      light: '#61dafb',
+      dark: '#21a1c4',
+    },
+    error: {
+      main: '#444444',
+    },
+    background: {
+      default: '#fff',
+    },
+  },
+  overrides: {
+    MuiPaper: {
+      root: {
+        padding: '20px 10px',
+        margin: '10px',
+        backgroundColor: '#000', // 5d737e
+      },
+    },
+    MuiButton: {
+      root: {
+        margin: '5px',
+      },
+    },
   }
 };
 
@@ -83,7 +147,7 @@ function App() {
         <CssBaseline/>
         <Container>
           <div className="App">
-            <Box component="div" p={4}></Box>
+            <Box component="div" p={1}></Box>
             <Card>
               <CardHeader action={<FormGroup>
                 <FormControlLabel
@@ -91,6 +155,21 @@ function App() {
                   label=""
                 />
               </FormGroup>}/>
+            </Card>
+
+            <Box component="div" p={1}></Box>
+            <Card>
+
+              <IconButton style={{ color: "black" }} aria-label="light" size="small">
+                <LightModeOutlinedIcon/>
+              </IconButton>
+              <IconButton color="primary" aria-label="light" size="small">
+                <NightlightOutlinedIcon/>
+              </IconButton>
+              <IconButton aria-label="light" size="small">
+                <NightlightOutlinedIcon/>
+              </IconButton>
+
               <Typography variant = "h3" component = "h3" >
                 <div className="container">
                   Ribo
@@ -98,10 +177,11 @@ function App() {
                 </div>
               </Typography>
               <img src={profile} alt="profile" className="App-logo" />
-                <Typography className="body1" variant="body1">
-                  Dark mode is {isDarkTheme ? "On" : "Off"}
-                </Typography>
+              <Typography className="body1" variant="body1">
+                Dark mode is {isDarkTheme ? "On" : "Off"}
+              </Typography>
             </Card>
+
           </div>
         </Container>
       </ThemeProvider>
