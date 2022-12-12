@@ -24,7 +24,7 @@ const light = {
       main: '#444444',
     },
     background: {
-      default: '#1E1E1E',
+      default: '#fff',
     },
   },
   overrides: {
@@ -115,7 +115,7 @@ function App() {
 
           <Box component="div" p={1}></Box>
 
-          <Card style={{ border: "none", boxShadow: "none", height: '500px' }}>
+          <Card style={{ border: "none", boxShadow: "none", height: "500px" }}>
             <p>Hello</p>
           </Card>
 
