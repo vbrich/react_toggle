@@ -4,16 +4,10 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-  height: 20vmin;
+.Right {
+  text-align: right;
 }
 
 .container {
   font-family: 'Noto Sans JP', sans-serif;
-}
-
-.body1 {
-  text-align: left;
 }
